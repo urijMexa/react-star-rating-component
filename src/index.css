@@ -1,35 +1,129 @@
+/* General Setup */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0ebe5;
+  color: #5C554B;
 }
 
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+/* Movie List Container */
+.movie-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* Movie Card */
+.movie-card {
+  display: flex;
+  width: 100%;
+  max-width: 650px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
-h1, h2 {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.5rem;
+/* Poster section */
+.movie-poster-container {
+  position: relative;
+  flex-shrink: 0;
 }
 
+.movie-poster {
+  width: 180px;
+  height: 270px;
+  display: block;
+  object-fit: cover;
+}
+
+.movie-tag {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  padding: 5px 15px 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%, 15% 50%);
+}
+
+.movie-tag.orange {
+  background-color: #f5a623;
+}
+
+.movie-tag.brown {
+  background-color: #8B572A;
+}
+
+
+/* Info section */
+.movie-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.movie-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 12px;
+  color: #C8C3BA;
+  cursor: pointer;
+}
+
+/* Stars Rating from previous task */
 .card-body-stars {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
 }
 
 .card-body-stars li {
   display: inline-block;
+  margin-right: 2px;
 }
 
-.u-clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+/* Footer section */
+.movie-footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.buy-button {
+  background-color: #8E8372;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.details-link {
+  color: #A9A195;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
 }
